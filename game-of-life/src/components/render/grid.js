@@ -22,26 +22,34 @@ const Row = styled.div`
 
 function CreateGrid(props) {
   return (
-    <Grid>
-      {props.board.map((rows, i) => (
-        <Row key={`${i}`}>
-          {rows.map((col, j) => (
-            <Cell
-              key={`${i}-${j}`}
-              onClick={() => {
-                if (!props.running) {
-                  const newBoard = produce(props.board, (boardCopy) => {
-                    boardCopy[i][j] = props.board[i][j] ? 0 : 1;
-                  });
-                  props.setBoard(newBoard);
-                }
-              }}
-              style={{ backgroundColor: props.board[i][j] ? "black" : "white" }}
-            />
-          ))}
-        </Row>
-      ))}
-    </Grid>
+    <>
+      <Grid
+        style={{
+          backgroundImage: "linear-gradient(purple, blue)",
+        }}
+      >
+        {props.board.map((rows, i) => (
+          <Row key={`${i}`}>
+            {rows.map((col, j) => (
+              <Cell
+                key={`${i}-${j}`}
+                onClick={() => {
+                  if (!props.running) {
+                    const newBoard = produce(props.board, (boardCopy) => {
+                      boardCopy[i][j] = props.board[i][j] ? 0 : 1;
+                    });
+                    props.setBoard(newBoard);
+                  }
+                }}
+                style={{
+                  backgroundColor: props.board[i][j] ? undefined : "white",
+                }}
+              />
+            ))}
+          </Row>
+        ))}
+      </Grid>
+    </>
   );
 }
 
