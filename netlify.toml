@@ -1,4 +1,0 @@
-[build]
-    command = "npm run-script build"
-    publish="game-of-life/build"
-    base = "game-of-life"
