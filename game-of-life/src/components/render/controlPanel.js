@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const Menu = styled.div`
-  display: flex;
-`;
-
 const Action = styled.button`
   border: none;
   border-radius: 2px;
