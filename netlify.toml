@@ -1,2 +1,4 @@
 [build]
-  base="game-of-life"
+    command = "npm run build
+    public="/"
+    base="game-of-life"
