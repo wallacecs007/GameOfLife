@@ -1,3 +1,2 @@
 [build]
-  command = "npm run build"
-  publish="game-of-life"
+  base="game-of-life"
